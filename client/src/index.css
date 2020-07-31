@@ -1,0 +1,164 @@
+body {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/opacity/see-through */
+  background-image: url('./epic.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: color-dodge;
+  background-size: cover;
+}
+
+.launch-btn:focus,
+.launch-btn:active,
+.launch-btn.active {
+  border: none;
+  box-shadow: none;
+}
+
+a {
+  color: #7df9ff;
+} /* CSS link color (red) */
+
+a:hover {
+  color: #ffffff;
+} /* CSS link hover (green) */
+
+.outerCollapsible button {
+  color: teal;
+}
+
+.jumbotron {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  /* background-color: rgba(0, 0, 0, 0.4); Black w/opacity/see-through */
+  background-color: rgba(5, 13, 43, 0.4);
+  color: white;
+  min-height: 20rem;
+  background-image: url(/machete.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: color-dodge;
+  margin: 2.5%;
+  margin-top: 4%;
+  padding-bottom: 1.25%;
+  width: 95%;
+  min-width: 48.75rem;
+  /* min-width: 75rem; */
+  /* margin-top: 0rem; */
+}
+
+.jumbotron h1 {
+  font-size: 3.5rem;
+}
+
+.jumbotron h4 {
+  font-size: 1.5rem;
+}
+
+.placeholder {
+  color: transparent;
+}
+
+.first-btn {
+  margin-left: 0.5rem;
+}
+.headerBar {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: 0rem;
+  position: fixed;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.header-btn {
+  /* background-color: rgba(0, 0, 0, 0.4); Black w/opacity/see-through */
+  /* color: rgb(5, 57, 226); */
+  background-color: transparent;
+  color: white;
+}
+
+.header-btn:hover,
+.header-btn:focus,
+.header-btn:active,
+.header-btn.active {
+  color: white;
+  background-color: #7df9ff;
+  border-color: none; /*set the color you want here*/
+  box-shadow: none;
+}
+
+::placeholder {
+  font-size: 100%;
+}
+
+.table {
+  color: white;
+}
+
+.main-content {
+  margin: 2.5%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 95%;
+  font-size: 1rem;
+  margin-top: 4%;
+  /* min-width: 75rem; */
+}
+
+.main-content h2 {
+  font-size: 2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  background-color: rgba(7, 66, 122, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  background-color: rgb(142, 223, 255);
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+  background: rgb(105, 212, 255);
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  background-color: rgba(7, 66, 122, 0.2);
+  background: transparent;
+}
+
+.menu-item {
+  width: 100%;
+  border-radius: 0rem;
+  text-align: left;
+  padding-left: 2rem;
+  background-color: rgba(7, 66, 122, 0.7);
+  border-color: transparent;
+}
+
+.menu-item:hover,
+.menu-item:focus,
+.menu-item:active,
+.menu-item.active {
+  color: white;
+  background-color: rgba(7, 66, 122, 0.7);
+  box-shadow: none;
+}
+
+.list-btn {
+  box-shadow: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 0px;
+  background-color: rgba(7, 66, 122, 0.7);
+  border: none;
+}
