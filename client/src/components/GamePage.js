@@ -152,7 +152,7 @@ const GamePage = (props) => {
               <p>Total test flights: {props.testflights}</p>
               <p>Total cost: ${props.cost}M</p>
               <p>Chance of Success: {props.flightChance}%</p>
-              <p>Fuel Amount: {props.fuelAmount}G</p>
+              <p>Total fuel used: {props.fuelAmount}G</p>
             </div>
           </>
         ) : null}

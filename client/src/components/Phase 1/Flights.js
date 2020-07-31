@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TestFlight from './TestFlight';
 
-const Flights = () => {
+const Flights = (props) => {
   const [text1Num, setText1Num] = useState(1);
   const [text2Num, setText2Num] = useState(1);
   const [text1Content, setText1Content] = useState('');
@@ -58,7 +58,9 @@ const Flights = () => {
             Now how many test flights should we perform?
           </p>
           <TestFlight />
-          <p>Each resource flight can bring </p>
+          <button className="btn btn-primary" onClick={props.done}>
+            Done
+          </button>
         </>
       ) : null}
     </>

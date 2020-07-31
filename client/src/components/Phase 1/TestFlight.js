@@ -10,34 +10,36 @@ const TestFlight = (props) => {
   const testflights = props.testflights;
   useEffect(() => {
     props.actions.setFlightChance(
-      Math.round((100 * (props.testflights / 2 + 50)) / 110)
+      Math.round((100 * (props.testflights / 2 + 55)) / 110)
     );
   }, [testflights]);
 
   const handleMinusOne = () => {
     props.actions.setTestflights(props.testflights - 1);
-    props.actions.setCost(props.cost - 50);
-    props.actions.setFuelAmount(props.fuelAmount - 75000);
+    props.actions.setCost(props.cost - 75);
+    props.actions.setFuelAmount(props.fuelAmount - 100000);
   };
   const handlePlusOne = () => {
     props.actions.setTestflights(props.testflights + 1);
-    props.actions.setCost(props.cost + 50);
-    props.actions.setFuelAmount(props.fuelAmount + 75000);
+    props.actions.setCost(props.cost + 75);
+    props.actions.setFuelAmount(props.fuelAmount + 100000);
   };
   const handleMinusTen = () => {
     props.actions.setTestflights(props.testflights - 10);
-    props.actions.setCost(props.cost - 500);
-    props.actions.setFuelAmount(props.fuelAmount - 750000);
+    props.actions.setCost(props.cost - 750);
+    props.actions.setFuelAmount(props.fuelAmount - 1000000);
   };
   const handlePlusTen = () => {
     props.actions.setTestflights(props.testflights + 10);
-    props.actions.setCost(props.cost + 500);
-    props.actions.setFuelAmount(props.fuelAmount + 750000);
+    props.actions.setCost(props.cost + 750);
+    props.actions.setFuelAmount(props.fuelAmount + 1000000);
   };
   return (
     <>
-      <p>Select how many test flights we should perform!</p>
-      <p>Each flight costs 50M dollars and uses 75000 Gallons of propellent.</p>
+      <p>
+        Each flight costs around 75M dollars and uses around 100000 Gallons of
+        propellent.
+      </p>
       <div style={{ fontSize: '0.75vw' }}>
         <button onClick={handleMinusTen}>-10</button>
         <button onClick={handleMinusOne}>-1</button>

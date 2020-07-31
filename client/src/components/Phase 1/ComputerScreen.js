@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import iphoneSim from '../../iphoneSim.png';
 import Flights from './Flights';
+import Liftoff from './Liftoff';
 
 const styles = {
   screen: {
@@ -61,6 +62,10 @@ const ComputerScreen = () => {
     }
   }, [text1Content, text2Content, screen]);
 
+  const done = () => {
+    setScreen(screen + 1);
+  };
+
   return (
     <>
       <div style={styles.screen}>
@@ -72,7 +77,9 @@ const ComputerScreen = () => {
                 <p style={{ marginTop: '3rem' }}>{text2Content}</p>
               </>
             ) : screen === 2 ? (
-              <Flights />
+              <Flights done={done} />
+            ) : screen === 3 ? (
+              <Liftoff />
             ) : null}
           </div>
         </div>
