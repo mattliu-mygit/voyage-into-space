@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import launchsite from '../launchsite.jpg';
-import ComputerScreen from './ComputerScreen';
+import ComputerScreen from './Phase 1/ComputerScreen';
+import sampleship from '../sampleship.png';
+import { connect } from 'react-redux';
 
 const styles = {
   gameStyle: {
@@ -20,7 +22,8 @@ const styles = {
     color: '#39FF14',
     fontSize: '1.75vw',
     fontFamily: 'Lucida Console, Courier, monospace',
-    height: `42.5vw`,
+    //height: `42.5vw`,
+    height: '50vw',
   },
   missionText: {
     marginLeft: '1rem',
@@ -32,7 +35,7 @@ const styles = {
   },
 };
 
-const GamePage = () => {
+const GamePage = (props) => {
   const [started, setStarted] = useState(false);
   const [word1Num, setWord1Num] = useState(1);
   const [word2Num, setWord2Num] = useState(1);
@@ -98,12 +101,13 @@ const GamePage = () => {
       <div
         style={{
           ...styles.gameStyle,
-          width: `${width}%`,
+          width: `${width}vw`,
           borderTopWidth: `${borderHeight}rem`,
           borderBottomWidth: `${borderHeight}rem`,
           borderLeftWidth: `${borderWidth}vw`,
           borderRightWidth: `${borderWidth}vw`,
-          backgroundSize: `89.05vw 53.5vw`,
+          backgroundSize: 'cover',
+          //backgroundSize: `89.05vw 53.5vw`,
         }}
       >
         {site.length !== 0 ? (
@@ -119,12 +123,67 @@ const GamePage = () => {
           </p>
         ) : null}
         {date.length !== 0 ? (
-          <p style={{ ...styles.missionText, position: 'absolute' }}>{date}</p>
+          <>
+            <p style={{ ...styles.missionText, position: 'absolute' }}>
+              {date}
+            </p>
+
+            {/* <img
+              src={sampleship}
+              alt="notfound"
+              style={{ position: 'relative', width: '10%' }}
+            /> */}
+          </>
         ) : null}
-        {startGame ? <ComputerScreen /> : null}
+        {startGame ? (
+          <>
+            <ComputerScreen />
+            <div
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                position: 'relative',
+                top: '5vw',
+                left: '5vw',
+                padding: '1rem',
+                width: '50vw',
+                borderRadius: '12px',
+              }}
+            >
+              <p>Total test flights: {props.testflights}</p>
+              <p>Total cost: ${props.cost}M</p>
+              <p>Chance of Success: {props.flightChance}%</p>
+              <p>Fuel Amount: {props.fuelAmount}G</p>
+            </div>
+          </>
+        ) : null}
       </div>
     </>
   );
 };
 
-export default GamePage;
+function mapStateToProps(state) {
+  return {
+    cost: state.cost,
+    testflights: state.testflights,
+    flightChance: state.flightChance,
+    fuelAmount: state.fuelAmount,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // actions: {
+    //   setCost: bindActionCreators(costActions.setCost, dispatch),
+    //   setTestflights: bindActionCreators(
+    //     testflightActions.setTestflights,
+    //     dispatch
+    //   ),
+    //   setFlightChance: bindActionCreators(
+    //     flightChanceActions.setFlightChance,
+    //     dispatch
+    //   ),
+    // },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GamePage);

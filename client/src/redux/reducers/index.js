@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
-import searchterm from './searchReducer';
-import marylandSearchterm from './marylandSearchReducer';
+import testflights from './testflightReducer';
+import cost from './costReducer';
+import flightChance from './flightChanceReducer';
+import fuelAmount from './fuelAmountReducer';
 
 const rootReducer = combineReducers({
-  searchterm,
-  marylandSearchterm,
+  cost,
+  testflights,
+  flightChance,
+  fuelAmount,
 });
 
 export default rootReducer;
