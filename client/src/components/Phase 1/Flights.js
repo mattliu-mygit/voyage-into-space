@@ -8,7 +8,7 @@ const Flights = (props) => {
   const [text2Content, setText2Content] = useState('');
   const [screen, setScreen] = useState(1);
   const text1 =
-    'Lets get started with some launches! In order to get to mars, we need plenty of preparation!';
+    'In order to get to Mars, we need plenty of preparation! The first unmanned mission to mars cost 450 million dollars and 200 tonnes of propellent, so those are our starting costs! ';
   const text2 =
     'First off, we need some test flights to make sure our rocket works!';
   useEffect(() => {
@@ -43,9 +43,6 @@ const Flights = (props) => {
         <>
           <p style={{ top: '5%' }}>
             More test flights will raise your chance of a successful launch!
-          </p>
-          <p>
-            Resources sent to orbit ensure that your rocket can reach mars!{' '}
           </p>
           <p>
             More resources means a larger range of error in case anything awry

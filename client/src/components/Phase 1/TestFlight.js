@@ -16,28 +16,28 @@ const TestFlight = (props) => {
 
   const handleMinusOne = () => {
     props.actions.setTestflights(props.testflights - 1);
-    props.actions.setCost(props.cost - 75);
-    props.actions.setFuelAmount(props.fuelAmount - 100000);
+    props.actions.setCost(props.cost - 50000000);
+    props.actions.setFuelAmount(props.fuelAmount - 200);
   };
   const handlePlusOne = () => {
     props.actions.setTestflights(props.testflights + 1);
-    props.actions.setCost(props.cost + 75);
-    props.actions.setFuelAmount(props.fuelAmount + 100000);
+    props.actions.setCost(props.cost + 50000000);
+    props.actions.setFuelAmount(props.fuelAmount + 200);
   };
   const handleMinusTen = () => {
     props.actions.setTestflights(props.testflights - 10);
-    props.actions.setCost(props.cost - 750);
-    props.actions.setFuelAmount(props.fuelAmount - 1000000);
+    props.actions.setCost(props.cost - 500000000);
+    props.actions.setFuelAmount(props.fuelAmount - 2000);
   };
   const handlePlusTen = () => {
     props.actions.setTestflights(props.testflights + 10);
-    props.actions.setCost(props.cost + 750);
-    props.actions.setFuelAmount(props.fuelAmount + 1000000);
+    props.actions.setCost(props.cost + 500000000);
+    props.actions.setFuelAmount(props.fuelAmount + 2000);
   };
   return (
     <>
       <p>
-        Each flight costs around 75M dollars and uses around 100000 Gallons of
+        Each flight costs around 50M dollars and uses around 200 tonnes of
         propellent.
       </p>
       <div style={{ fontSize: '0.75vw' }}>

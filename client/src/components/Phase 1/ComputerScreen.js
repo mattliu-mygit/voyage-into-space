@@ -34,7 +34,7 @@ const styles = {
   },
 };
 
-const ComputerScreen = () => {
+const ComputerScreen = (props) => {
   const [text1Num, setText1Num] = useState(1);
   const [text2Num, setText2Num] = useState(1);
   const [text1Content, setText1Content] = useState('');
@@ -79,7 +79,7 @@ const ComputerScreen = () => {
             ) : screen === 2 ? (
               <Flights done={done} />
             ) : screen === 3 ? (
-              <Liftoff />
+              <Liftoff setOff={props.setOff} />
             ) : null}
           </div>
         </div>
