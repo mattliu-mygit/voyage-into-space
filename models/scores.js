@@ -4,7 +4,7 @@ const ScoresSchema = new mongoose.Schema({
   username: {
     type: String,
   },
-  settlers: {
+  score: {
     type: Number,
   },
 });

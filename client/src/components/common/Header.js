@@ -18,7 +18,10 @@ function Header() {
 
   return (
     <>
-      <nav className="headerBar" style={{ color: '#D8D8D8' }}>
+      <nav
+        className="headerBar"
+        style={{ color: '#D8D8D8', position: 'absolute', top: '0%' }}
+      >
         <div>
           <NavLink
             className="btn btn-primary header-btn first-btn"
