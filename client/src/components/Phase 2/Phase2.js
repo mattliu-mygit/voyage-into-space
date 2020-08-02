@@ -64,6 +64,10 @@ const Phase2 = (props) => {
     if (timer === 1 && showAuth === 3) {
       const rollDie = Math.random();
       console.log(rollDie, props.flightChance / 100);
+      props.actions.setMissionLog([
+        ...props.missionLog,
+        `Day 1: Let's look back at the Earth! We also just passed the moon!`,
+      ]);
       if (rollDie > props.flightChance / 100) {
         reset();
         props.actions.setMissionLog([
@@ -72,10 +76,6 @@ const Phase2 = (props) => {
         ]);
         setDeath(true);
       }
-      props.actions.setMissionLog([
-        ...props.missionLog,
-        `Day 1: Let's look back at the Earth! We also just passed the moon!`,
-      ]);
       setTimeout(() => {
         setTimer(timer + 1);
       }, 15000);
@@ -83,7 +83,7 @@ const Phase2 = (props) => {
     if (timer > 1 && timer < 200 && showAuth === 3) {
       setTimeout(() => {
         const rollDie = Math.random();
-        if (rollDie < 0.01) {
+        if (rollDie < 0.02) {
           if (props.oxygen < 0.5 * props.settlers) {
             props.actions.setMissionLog([
               ...props.missionLog,
@@ -99,7 +99,7 @@ const Phase2 = (props) => {
             ]);
           }
         }
-        if (rollDie < 0.01) {
+        if (rollDie < 0.02) {
           if (props.rocketFuel < 250) {
             props.actions.setMissionLog([
               ...props.missionLog,
@@ -116,7 +116,7 @@ const Phase2 = (props) => {
           }
         }
         setTimer(timer + 1);
-      }, 1000);
+      }, 750);
     }
     if (timer === 200) {
       setTimeout(() => {
@@ -124,6 +124,7 @@ const Phase2 = (props) => {
           ...props.missionLog,
           `Day ${timer}: We reached Mars! Landing procedures initiated. Ready colonize this planet!`,
         ]);
+        setSuccess(true);
       }, 1000);
     }
 
@@ -222,7 +223,6 @@ const Phase2 = (props) => {
                       events below.
                     </p>
                     <p>
-                      {' '}
                       Look at the poppup at the bottom right of your helmet HUD
                       to take a look at a picture of the Earth we took!
                     </p>

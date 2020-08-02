@@ -1,7 +1,7 @@
 import { handleResponse, handleError } from './apiUtils';
-const baseUrl =
-  'http://localhost:' + (process.env.PORT || 8081) + '/api/scores/';
-// const baseUrl = 'https://voyage-into-space.herokuapp.com/api/scores';
+// const baseUrl =
+//   'http://localhost:' + (process.env.PORT || 8081) + '/api/scores/';
+const baseUrl = 'https://voyage-into-space.herokuapp.com/api/scores';
 
 export async function getData() {
   return await fetch(baseUrl).then(handleResponse).catch(handleError);

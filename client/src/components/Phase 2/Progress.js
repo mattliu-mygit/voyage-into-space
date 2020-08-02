@@ -9,7 +9,7 @@ const Progress = (props) => {
     if (props.timer <= 200) {
       setTimeout(() => {
         setRocketHeight(rocketHeight - 0.4225);
-      }, 1000);
+      }, 750);
     }
   }, [props.timer]);
 
