@@ -81,9 +81,28 @@ const Congrats = (props) => {
               marginBottom: '1vw',
             }}
           />
-          <input type="submit" value="Submit" />
+          <input
+            className="bootn bootn4"
+            style={{
+              fontSize: '1vw',
+              width: '10%',
+              height: '2vw',
+              margin: '0.25rem',
+            }}
+            type="submit"
+            value="Submit"
+          />
         </form>
-        <button className="btn btn-primary" onClick={handlePlayAgain}>
+        <button
+          style={{
+            fontSize: '1vw',
+            width: '10%',
+            height: '2vw',
+            margin: '1rem',
+          }}
+          className="bootn bootn4"
+          onClick={handlePlayAgain}
+        >
           Play Again
         </button>
         {playAgain ? <Redirect to="/" /> : null}

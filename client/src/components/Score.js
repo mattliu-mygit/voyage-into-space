@@ -5,7 +5,8 @@ import initialState from '../redux/reducers/initialState';
 const Score = (props) => {
   useEffect(() => {
     props.setScore(
-      (props.cost - initialState.cost) * 100 +
+      props.cost -
+        initialState.cost +
         (props.rocketFuel - initialState.rocketFuel) * 10 +
         props.settlers * 1000 +
         props.settlers * 500
@@ -25,7 +26,7 @@ const Score = (props) => {
           <tr>
             <th>Total Cost</th>
             <th>${props.cost}</th>
-            <th>{(props.cost - initialState.cost) * 100}</th>
+            <th>{props.cost - initialState.cost}</th>
           </tr>
           <tr>
             <th>Total Fuel Used</th>
