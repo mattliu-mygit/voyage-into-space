@@ -2,10 +2,19 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import * as costActions from '../redux/actions/costActions';
+import * as fuelAmountActions from '../redux/actions/fuelAmountActions';
+import * as rocketFuelActions from '../redux/actions/rocketFuelActions';
+import * as equipmentCostActions from '../redux/actions/equipmentCostActions';
+import * as settlersActions from '../redux/actions/settlersActions';
+import * as oxygenActions from '../redux/actions/oxygenActions';
+import * as flightChanceActions from '../redux/actions/flightChanceActions';
+import * as testFlightActions from '../redux/actions/testflightActions';
 import * as missionLogActions from '../redux/actions/missionLogActions';
 import MissionLog from './Phase 2/MissionLog';
 import Score from './Score';
 import { setData } from '../api/scoresApi';
+import initialState from '../redux/reducers/initialState';
 
 const Congrats = (props) => {
   const [playAgain, setPlayAgain] = useState(false);
@@ -21,11 +30,24 @@ const Congrats = (props) => {
   const handleSubmit = () => {
     let entry = { name: name, score: score };
     setData(entry);
+    reset();
     setRedirect(true);
   };
 
   const handleChange = (event) => {
     setName(event.target.value);
+  };
+
+  const reset = () => {
+    props.actions.setEquipmentCost(initialState.equipmentCost);
+    props.actions.setCost(initialState.cost);
+    props.actions.setFlightChance(initialState.flightChance);
+    props.actions.setFuelAmount(initialState.fuelAmount);
+    props.actions.setOxygen(initialState.oxygen);
+    props.actions.setRocketFuel(initialState.rocketFuel);
+    props.actions.setSettlers(initialState.settlers);
+    props.actions.setTestflights(initialState.testflights);
+    props.actions.setMissionLog(initialState.missionLog);
   };
 
   return (
@@ -113,17 +135,53 @@ const Congrats = (props) => {
 };
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    cost: state.cost,
+    flightChance: state.flightChance,
+    fuelAmount: state.fuelAmount,
+    settlers: state.settlers,
+    equipmentCost: state.equipmentCost,
+    rocketFuel: state.rocketFuel,
+    oxygen: state.oxygen,
+    missionLog: state.missionLog,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
+      setCost: bindActionCreators(costActions.setCost, dispatch),
+      setFuelAmount: bindActionCreators(
+        fuelAmountActions.setFuelAmount,
+        dispatch
+      ),
+      setRocketFuel: bindActionCreators(
+        rocketFuelActions.setRocketFuel,
+        dispatch
+      ),
+      setEquipmentCost: bindActionCreators(
+        equipmentCostActions.setEquipmentCost,
+        dispatch
+      ),
+      setSettlers: bindActionCreators(settlersActions.setSettlers, dispatch),
+      setOxygen: bindActionCreators(oxygenActions.setOxygen, dispatch),
+      setFlightChance: bindActionCreators(
+        flightChanceActions.setFlightChance,
+        dispatch
+      ),
+      setTestflights: bindActionCreators(
+        testFlightActions.setTestflights,
+        dispatch
+      ),
       setMissionLog: bindActionCreators(
         missionLogActions.setMissionLog,
         dispatch
       ),
     },
+    setMissionLog: bindActionCreators(
+      missionLogActions.setMissionLog,
+      dispatch
+    ),
   };
 }
 

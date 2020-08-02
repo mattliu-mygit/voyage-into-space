@@ -85,11 +85,11 @@ const Phase2 = (props) => {
         const rollDie = Math.random();
         if (rollDie < 0.025) {
           if (props.oxygen < 0.5 * props.settlers) {
+            reset();
             props.actions.setMissionLog([
               ...props.missionLog,
               `Day ${timer}: Untracked gravel-sized space rocks hit the rocket. Rocket is mostly undamaged and repairs were smooth, but some oxygen is lost and there isn't enough left to survive the voyage. Bring more oxygen next time!`,
             ]);
-            reset();
             setDeath(true);
           } else {
             props.actions.setOxygen(props.oxygen - 3);

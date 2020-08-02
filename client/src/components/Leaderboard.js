@@ -46,6 +46,7 @@ const Leaderboard = (props) => {
             ))}
           </tbody>
         </table>
+        *Reload the page once if you don't see your score!
       </div>
       ;
     </>
