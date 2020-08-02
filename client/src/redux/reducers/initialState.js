@@ -7,4 +7,5 @@ export default {
   settlers: 0,
   equipmentCost: 0,
   oxygen: 0,
+  missionLog: [],
 };

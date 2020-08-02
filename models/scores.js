@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const ScoresSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
   },
-  settlers: {
+  score: {
     type: Number,
   },
 });

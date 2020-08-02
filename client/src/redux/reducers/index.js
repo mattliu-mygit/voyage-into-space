@@ -7,6 +7,7 @@ import settlers from './settlersReducer';
 import rocketFuel from './rocketFuelReducer';
 import equipmentCost from './equipmentCostReducer';
 import oxygen from './oxygenReducer';
+import missionLog from './missionLogReducer';
 
 const rootReducer = combineReducers({
   cost,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   rocketFuel,
   equipmentCost,
   oxygen,
+  missionLog,
 });
 
 export default rootReducer;

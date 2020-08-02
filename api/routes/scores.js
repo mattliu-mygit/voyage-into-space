@@ -1,11 +1,10 @@
-const scores = require('../../models/scores');
+const Scores = require('../../models/Scores');
 const mongoose = require('mongoose');
 
 module.exports = function (router) {
   // GET
   router.get('/scores', function (req, res) {
-    scores
-      .find()
+    Scores.find()
       .exec()
       .then((docs) => res.status(200).json(docs))
       .catch((err) =>
