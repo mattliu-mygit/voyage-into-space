@@ -13,22 +13,22 @@ module.exports = function (router) {
       );
   });
 
-  // POST
-  //   router.post('/scores', function (req, res) {
-  //     let note = new Scores(req.body);
-  //     note.save(function (err, member) {
-  //       if (err) {
-  //         return res.status(400).json(err);
-  //       }
-  //       res.status(200).json(member);
-  //     });
-  //   });
-  // };
-  app.post('/scores', (req, res) => {
-    console.log(req.body);
-    db.collection('scores').insertOne(req.body, (err, data) => {
-      if (err) return console.log(err);
-      res.send('saved to db: ' + data);
+  //POST;
+  router.post('/scores', function (req, res) {
+    let note = new Scores(req.body);
+    note.save(function (err, member) {
+      if (err) {
+        return res.status(400).json(err);
+      }
+      res.status(200).json(member);
     });
   });
 };
+//   app.post('/scores', (req, res) => {
+//     console.log(req.body);
+//     db.collection('scores').insertOne(req.body, (err, data) => {
+//       if (err) return console.log(err);
+//       res.send('saved to db: ' + data);
+//     });
+//   });
+// };
