@@ -21,18 +21,6 @@ app.use(morgan('dev'));
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-// global.bodyParser = require('body-parser');
-
-// app.use(bodyParser.urlencoded({
-//   extended: true,
-//   limit: '50mb',
-//   parameterLimit: 100000
-// }))
-// app.use(bodyParser.json({
-//   limit: '50mb',
-//   parameterLimit: 100000
-// }))
-
 const mongoose = require('mongoose');
 mongoose.connect(
   'mongodb+srv://Admin:voyage420@voyage-into-space.je1sn.mongodb.net/voyageintospace?retryWrites=true&w=majority',
