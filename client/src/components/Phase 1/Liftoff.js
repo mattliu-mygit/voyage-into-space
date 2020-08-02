@@ -135,35 +135,35 @@ const Liftoff = (props) => {
         </>
       ) : screen === 2 ? (
         <>
-          <p>Add in resources below!</p>
-          <p>Fuel</p>
-          <div style={{ fontSize: '0.75vw' }}>
-            <button onClick={handleFuelMinusTen}>-100</button>
-            <button onClick={handleFuelMinusOne}>-10</button>
-            <button onClick={handleFuelPlusOne}>+10</button>
-            <button onClick={handleFuelPlusTen}>+100</button>
+          <p class="resources" style = {{marginTop: '0rem'}}>Add in resources below!</p>
+          <p class="Fuel" style = {{marginBottom: '1rem'}}>Fuel</p>
+          <div style={{ fontSize: '1vw' }}>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn5"onClick={handleFuelMinusTen}>-100</button>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn5"onClick={handleFuelMinusOne}>-10</button>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn5"onClick={handleFuelPlusOne}>+10</button>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn5" onClick={handleFuelPlusTen}>+100</button>
           </div>
-          <p>Settlers (0.07 tonnes)</p>
-          <div style={{ fontSize: '0.75vw' }}>
-            <button onClick={handleSettlersMinusTen}>-10</button>
-            <button onClick={handleSettlersMinusOne}>-1</button>
-            <button onClick={handleSettlersPlusOne}>+1</button>
-            <button onClick={handleSettlersPlusTen}>+10</button>
+          <p class="Settlers">Settlers (0.07 tonnes)</p>
+          <div style={{ fontSize: '1vw' }}>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn6"onClick={handleSettlersMinusTen}>-10</button>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn6"onClick={handleSettlersMinusOne}>-1</button>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn6"onClick={handleSettlersPlusOne}>+1</button>
+            <button style = {{borderRadius:'12px'}}class="bootn2 bootn6" onClick={handleSettlersPlusTen}>+10</button>
           </div>
-          <button onClick={handleContinue}>Continue</button>
+          <button style = {{borderRadius:'12px'}}class="bootn4 bootn7"onClick={handleContinue}>Continue</button>
         </>
       ) : screen === 3 ? (
         <>
-          <p>Oxygen in reserve</p>
+          <p class="Oxygen">Oxygen in Reserve</p>
           <div style={{ fontSize: '0.75vw' }}>
-            <button onClick={handleOxygenMinusTen}>-5</button>
-            <button onClick={handleOxygenMinusOne}>-0.5</button>
-            <button onClick={handleOxygenPlusOne}>+0.5</button>
-            <button onClick={handleOxygenPlusTen}>+5</button>
+            <button class="bootn69 bootn79" style = {{borderRadius:'12px'}}onClick={handleOxygenMinusTen}>-5</button>
+            <button class="bootn69 bootn79" style = {{borderRadius:'12px'}}onClick={handleOxygenMinusOne}>-0.5</button>
+            <button class="bootn69 bootn79" style = {{borderRadius:'12px'}}onClick={handleOxygenPlusOne}>+0.5</button>
+            <button class="bootn69 bootn79" style = {{borderRadius:'12px'}}onClick={handleOxygenPlusTen}>+5</button>
           </div>
-          <p>Scientific equipment</p>
+          <p class="Equip">Scientific Equipment</p>
           <div style={{ fontSize: '0.75vw' }}>
-            <button
+            <button class="bootn23 bootn223" style = {{borderRadius:'12px'}}
               onClick={() => {
                 props.actions.setEquipmentCost(props.equipmentCost - 1);
                 props.actions.setCost(props.cost - 3500);
@@ -173,7 +173,7 @@ const Liftoff = (props) => {
             >
               -1
             </button>
-            <button
+            <button class="bootn23 bootn223" style = {{borderRadius:'12px'}}
               onClick={() => {
                 props.actions.setEquipmentCost(props.equipmentCost + 1);
                 props.actions.setCost(props.cost + 3500);
@@ -184,7 +184,7 @@ const Liftoff = (props) => {
               +1
             </button>
           </div>
-          <button
+          <button class="bootn3456 bootn7654" style = {{borderRadius:'12px'}}
             onClick={() => {
               setScreen(screen + 1);
             }}

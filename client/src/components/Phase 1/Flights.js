@@ -55,7 +55,7 @@ const Flights = (props) => {
             Now how many test flights should we perform?
           </p>
           <TestFlight />
-          <button className="btn btn-primary" onClick={props.done}>
+          <button class="conlainer button-group " class="bootn1 bootn4" style = {{borderRadius:'12px'}} onClick={props.done}>
             Done
           </button>
         </>

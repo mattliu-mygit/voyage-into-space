@@ -40,12 +40,14 @@ const TestFlight = (props) => {
         Each flight costs around 50M dollars and uses around 200 tonnes of
         propellent.
       </p>
-      <div style={{ fontSize: '0.75vw' }}>
-        <button onClick={handleMinusTen}>-10</button>
-        <button onClick={handleMinusOne}>-1</button>
-        <button onClick={handlePlusOne}>+1</button>
-        <button onClick={handlePlusTen}>+10</button>
+      <div class="conlainer button-group " style={{ fontSize: '0.75vw' }}>
+        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handleMinusTen}>-10</button>
+        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handleMinusOne}>-1</button>
+        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handlePlusOne}>+1</button>
+        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handlePlusTen}>+10</button>
+        
       </div>
+      
     </>
   );
 };
