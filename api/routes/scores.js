@@ -1,4 +1,4 @@
-const Scores = require('../../models/Scores');
+const Scores = require('../../models/scores');
 const mongoose = require('mongoose');
 
 module.exports = function (router) {
