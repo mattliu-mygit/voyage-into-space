@@ -169,7 +169,7 @@ a:hover {
 /* Variables */
 /* General */
 
-.bootn{
+.bootn {
   color: black;
   font-size: 90px;
 }
@@ -181,15 +181,16 @@ a:hover {
 }
 .bootn3 {
   width: 6vw;
-  font-size:1.30vw;
+  font-size: 1.3vw;
   height: 3vw;
-  margin:0.25vw;
+  margin: 0.25vw;
   cursor: pointer;
-  background: lightgray;
+  background-color: transparent;
+  border: none;
   outline: none;
   padding: 0rem;
   transition: 1s ease-in-out;
-  margin-left:0.75vw;
+  margin-left: 0.75vw;
 }
 svg {
   position: absolute;
@@ -205,12 +206,13 @@ svg {
 .bootn3:hover,
 .bootn3:focus,
 .bootn3:active,
-.bootn3.active{
+.bootn3.active {
   transition: 1s ease-in-out;
   background: lightskyblue;
   outline: none;
-  box-shadow: 0px 0px 0px 2.5px black, 0px 0px 0px 5px lightblue, 0px 0px 0px 5px black;
-  color:red;
+  box-shadow: 0px 0px 0px 5px lightblue;
+  color: red;
+  border: none;
 }
 
 .bootn3:hover svg {
@@ -225,30 +227,28 @@ svg {
 /*---------------------------------------------------------------------------------------------------*/
 .bootn4 {
   width: 13.5vw;
-  font-size:2vw;
+  font-size: 2vw;
   margin: 0.5rem;
   height: 4vw;
   cursor: pointer;
-  background: lightgray;
   outline: none;
   transition: 1s ease-in-out;
   margin-top: 2vw;
 }
-.bootn1{
+.bootn1 {
   color: black;
   font-size: 20px;
-  padding-left:1.9rem;
+  padding-left: 1.9rem;
 }
 .bootn4:hover,
 .bootn4:focus,
 .bootn4:active,
-.bootn4.active{
+.bootn4.active {
   transition: 1s ease-in-out;
   background: lightgreen;
   outline: none;
   box-shadow: 0px 0px 0px 2.5px black, 0px 0px 0px 2.5px lightgreen;
-  color:lightseagreen;
- 
+  color: lightseagreen;
 }
 
 .bootn4:hover svg {
@@ -259,40 +259,39 @@ svg {
   color: black;
   font-size: 18px;
   font-weight: 100;
-  
 }
 /*------------------------------------------------------------*/
-.resources{
-margin:0vw;
+.resources {
+  margin: 0vw;
 
-padding-left: 0.65vw;
+  padding-left: 0.65vw;
 }
 .bootn5 {
   width: 7vw;
-  font-size:1.5vw;
-  margin-top:0.5vw;
+  font-size: 1.5vw;
+  margin-top: 0.5vw;
   height: 3vw;
   cursor: pointer;
   background: lightgray;
   outline: none;
   transition: 1s ease-in-out;
-  padding-right:0rem
+  padding-right: 0rem;
 }
-.bootn2{
+.bootn2 {
   color: black;
   font-size: 3.5vw;
-  padding-left:0rem;
-  margin-right:0.75vw;
+  padding-left: 0rem;
+  margin-right: 0.75vw;
 }
 .bootn5:hover,
 .bootn5:focus,
 .bootn5:active,
-.bootn5.active{
+.bootn5.active {
   transition: 1s ease-in-out;
   background: orange;
   outline: none;
   box-shadow: 0px 0px 0px 2.5px black, 0px 0px 0px 2.5px orange;
-  color:darkcyan;
+  color: darkcyan;
 }
 
 .bootn5:hover svg {
@@ -303,34 +302,33 @@ padding-left: 0.65vw;
   color: black;
   font-size: 18vw;
   font-weight: 100;
-  
 }
 /*----------------------------------------------------------------------------*/
 .bootn6 {
   width: 3vw;
-  font-size:0.5vw;
+  font-size: 0.5vw;
   margin: 0.25rem;
   height: 3vw;
   cursor: pointer;
   background: lightgray;
   outline: none;
   transition: 1s ease-in-out;
-  padding-right:0rem
+  padding-right: 0rem;
 }
-.bootn2{
+.bootn2 {
   color: black;
   font-size: 1.25vw;
-  padding-left:0rem
+  padding-left: 0rem;
 }
 .bootn6:hover,
 .bootn6:focus,
 .bootn6:active,
-.bootn6.active{
+.bootn6.active {
   transition: 1s ease-in-out;
   background: powderblue;
   outline: none;
   box-shadow: 0px 0px 0px 2.5px black, 0px 0px 0px 2.5px powderblue;
-  color:darkred;
+  color: darkred;
 }
 
 .bootn6:hover svg {
@@ -341,30 +339,28 @@ padding-left: 0.65vw;
   color: black;
   font-size: 18px;
   font-weight: 100;
-  
 }
 /*-------------------------------------------------------------------------*/
 .bootn7 {
   width: 12vw;
-  font-size:1vw;
+  font-size: 1vw;
   margin: 1rem;
   height: 5vw;
   cursor: pointer;
   background: lightgray;
   outline: none;
   transition: 1s ease-in-out;
-  padding-right:0rem
+  padding-right: 0rem;
 }
-.bootn4{
+.bootn4 {
   color: black;
   font-size: 25px;
-  padding-left:0rem
-  
+  padding-left: 0rem;
 }
 .bootn7:hover,
 .bootn7:focus,
 .bootn7:active,
-.bootn7.active{
+.bootn7.active {
   transition: 1s ease-in-out;
   background: powderblue;
   outline: none;
@@ -380,43 +376,41 @@ padding-left: 0.65vw;
   color: black;
   font-size: 18px;
   font-weight: 100;
-  
 }
 
-
-.Fuel{
-font-size:1.5vw;
-padding-left: 5.5vw;
-font-weight: bold;
+.Fuel {
+  font-size: 1.5vw;
+  padding-left: 5.5vw;
+  font-weight: bold;
 }
 
-.Settlers{
- padding-top: 2vw;
+.Settlers {
+  padding-top: 2vw;
   font-size: 1.5vw;
   font-weight: bold;
 }
 /*-------------------------------------------------------------------------*/
 .bootn69 {
   width: 6vw;
-  font-size:3vw;
+  font-size: 3vw;
   margin: 0.15rem;
   height: 3.25vw;
   cursor: pointer;
   background: lightgray;
   outline: none;
   transition: 1s ease-in-out;
-  padding-right:0.5rem;
-margin-left: 0.7vw;
+  padding-right: 0.5rem;
+  margin-left: 0.7vw;
 }
-.bootn79{
+.bootn79 {
   color: black;
   font-size: 15px;
-  padding-left:0.1rem
+  padding-left: 0.1rem;
 }
 .bootn69:hover,
 .bootn69:focus,
 .bootn69:active,
-.bootn69.active{
+.bootn69.active {
   transition: 1s ease-in-out;
   background: lightpink;
   outline: none;
@@ -431,40 +425,39 @@ margin-left: 0.7vw;
   color: black;
   font-size: 18px;
   font-weight: 100;
-  
 }
-.Oxygen{
-padding-left: 0.60vw;
-font-size:18px;
-font-weight:bold;
+.Oxygen {
+  padding-left: 0.6vw;
+  font-size: 18px;
+  font-weight: bold;
 }
-.Equip{
-  margin-top:1.75vw;
-  font-size:18px;
-  font-weight:bold;
-  padding-bottom:-1;
+.Equip {
+  margin-top: 1.75vw;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: -1;
 }
 /*-------------------------------------------------------------------------*/
 .bootn23 {
   width: 6vw;
-  font-size:1.5vw;
+  font-size: 1.5vw;
   margin: 0.5rem;
   height: 4vw;
   cursor: pointer;
   background: lightgray;
   outline: none;
   transition: 1s ease-in-out;
-  padding-right:0rem
+  padding-right: 0rem;
 }
-.bootn223{
+.bootn223 {
   color: black;
   font-size: 2vw;
-  padding-left:0rem
+  padding-left: 0rem;
 }
 .bootn23:hover,
 .bootn23:focus,
 .bootn23:active,
-.bootn23.active{
+.bootn23.active {
   transition: 1s ease-in-out;
   background: lightsalmon;
   outline: none;
@@ -479,30 +472,28 @@ font-weight:bold;
   color: black;
   font-size: 18px;
   font-weight: 100;
-  
 }
 /*-------------------------------------------------------------------------*/
 .bootn3456 {
   width: 14.5vw;
-  font-size:1.5vw;
-  margin-top:2.5vw;
+  font-size: 1.5vw;
+  margin-top: 2.5vw;
   height: 4vw;
   cursor: pointer;
   background: lightcoral;
   outline: none;
   transition: 1s ease-in-out;
 }
-.bootn7654{
+.bootn7654 {
   color: black;
   font-size: 2vw;
   font-weight: bold;
-  padding-right:0.7vw;
-
+  padding-right: 0.7vw;
 }
 .bootn3456:hover,
 .bootn3456:focus,
 .bootn3456:active,
-.bootn3456.active{
+.bootn3456.active {
   transition: 1s ease-in-out;
   background: orange;
   outline: none;
@@ -518,5 +509,4 @@ font-weight:bold;
   color: yellow;
   font-size: 18px;
   font-weight: 100;
-  
 }

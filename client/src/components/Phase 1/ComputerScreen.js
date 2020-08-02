@@ -41,7 +41,7 @@ const ComputerScreen = (props) => {
   const [text2Content, setText2Content] = useState('');
   const [screen, setScreen] = useState(1);
   const text1 =
-    'Hello! I am your launch manager, Connor! I will be assisting you on your mission into space!';
+    'Hello! I am your launch ai, X Æ A-13! I will be assisting you on your mission into space!';
   const text2 = 'Lets get started with launch preparations!';
   useEffect(() => {
     if (screen === 1) {

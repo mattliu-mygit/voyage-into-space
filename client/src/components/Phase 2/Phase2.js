@@ -83,7 +83,7 @@ const Phase2 = (props) => {
     if (timer > 1 && timer < 200 && showAuth === 3) {
       setTimeout(() => {
         const rollDie = Math.random();
-        if (rollDie < 0.02) {
+        if (rollDie < 0.025) {
           if (props.oxygen < 0.5 * props.settlers) {
             props.actions.setMissionLog([
               ...props.missionLog,
@@ -99,7 +99,7 @@ const Phase2 = (props) => {
             ]);
           }
         }
-        if (rollDie < 0.02) {
+        if (rollDie < 0.025) {
           if (props.rocketFuel < 250) {
             props.actions.setMissionLog([
               ...props.missionLog,
@@ -148,7 +148,7 @@ const Phase2 = (props) => {
       setTimeout(() => {
         props.actions.setMissionLog([
           ...props.missionLog,
-          `Day ${timer}: We're almost there! Landing procedures initiated. Take a look at our target!!`,
+          `Day ${timer}: We're almost there! Take a look at our target!!`,
         ]);
       }, 1000);
     }

@@ -15,9 +15,13 @@ const TestFlight = (props) => {
   }, [testflights]);
 
   const handleMinusOne = () => {
-    props.actions.setTestflights(props.testflights - 1);
-    props.actions.setCost(props.cost - 50000000);
-    props.actions.setFuelAmount(props.fuelAmount - 200);
+    if (testflights > 0) {
+      props.actions.setTestflights(props.testflights - 1);
+      props.actions.setCost(props.cost - 50000000);
+      props.actions.setFuelAmount(props.fuelAmount - 200);
+    } else {
+      alert('Impossible to have negative flights!');
+    }
   };
   const handlePlusOne = () => {
     props.actions.setTestflights(props.testflights + 1);
@@ -25,9 +29,13 @@ const TestFlight = (props) => {
     props.actions.setFuelAmount(props.fuelAmount + 200);
   };
   const handleMinusTen = () => {
-    props.actions.setTestflights(props.testflights - 10);
-    props.actions.setCost(props.cost - 500000000);
-    props.actions.setFuelAmount(props.fuelAmount - 2000);
+    if (testflights > 10) {
+      props.actions.setTestflights(props.testflights - 10);
+      props.actions.setCost(props.cost - 500000000);
+      props.actions.setFuelAmount(props.fuelAmount - 2000);
+    } else {
+      alert('Impossible to have negative flights!');
+    }
   };
   const handlePlusTen = () => {
     props.actions.setTestflights(props.testflights + 10);
@@ -41,13 +49,35 @@ const TestFlight = (props) => {
         propellent.
       </p>
       <div class="conlainer button-group " style={{ fontSize: '0.75vw' }}>
-        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handleMinusTen}>-10</button>
-        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handleMinusOne}>-1</button>
-        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handlePlusOne}>+1</button>
-        <button class="bootn bootn3" style = {{borderRadius:'12px'}} onClick={handlePlusTen}>+10</button>
-        
+        <button
+          class="bootn bootn3"
+          style={{ borderRadius: '12px' }}
+          onClick={handleMinusTen}
+        >
+          -10
+        </button>
+        <button
+          class="bootn bootn3"
+          style={{ borderRadius: '12px' }}
+          onClick={handleMinusOne}
+        >
+          -1
+        </button>
+        <button
+          class="bootn bootn3"
+          style={{ borderRadius: '12px' }}
+          onClick={handlePlusOne}
+        >
+          +1
+        </button>
+        <button
+          class="bootn bootn3"
+          style={{ borderRadius: '12px' }}
+          onClick={handlePlusTen}
+        >
+          +10
+        </button>
       </div>
-      
     </>
   );
 };

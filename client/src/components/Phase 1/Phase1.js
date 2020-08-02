@@ -148,12 +148,6 @@ const GamePage = (props) => {
             <p style={{ ...styles.missionText, position: 'absolute' }}>
               {date}
             </p>
-
-            {/* <img
-              src={sampleship}
-              alt="notfound"
-              style={{ position: 'relative', width: '10%' }}
-            /> */}
           </>
         ) : null}
         {startGame && !close ? (

@@ -6,7 +6,7 @@ const Score = (props) => {
   useEffect(() => {
     props.setScore(
       (props.cost - initialState.cost) * 100 +
-        (props.rocketFuel - props.rocketFuel) * 10 +
+        (props.rocketFuel - initialState.rocketFuel) * 10 +
         props.settlers * 1000 +
         props.settlers * 500
     );
@@ -30,7 +30,7 @@ const Score = (props) => {
           <tr>
             <th>Total Fuel Used</th>
             <th>{props.rocketFuel} tonnes</th>
-            <th>{(props.rocketFuel - props.rocketFuel) * 10}</th>
+            <th>{(props.rocketFuel - initialState.rocketFuel) * 10}</th>
           </tr>
           <tr>
             <th>Settlers</th>
