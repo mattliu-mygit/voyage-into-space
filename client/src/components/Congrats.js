@@ -11,7 +11,6 @@ const Congrats = (props) => {
   const [playAgain, setPlayAgain] = useState(false);
   const [score, setScore] = useState(0);
   const [name, setName] = useState('');
-  const [input, setInput] = useState('');
   const [redirect, setRedirect] = useState(false);
 
   const handlePlayAgain = () => {
@@ -20,11 +19,13 @@ const Congrats = (props) => {
   };
 
   const handleSubmit = () => {
-    console.log('input', input);
-    setName(input);
-    let entry = { name: name, score: 1 };
+    let entry = { name: name, score: score };
     setData(entry);
     setRedirect(true);
+  };
+
+  const handleChange = (event) => {
+    setName(event.target.value);
   };
 
   return (
@@ -68,11 +69,9 @@ const Congrats = (props) => {
           <input
             className="form-control searchbar"
             type="text"
-            value={input}
+            value={name}
             placeholder="Enter your name here!"
-            onChange={(event) => {
-              setInput(event.target.value);
-            }}
+            onChange={handleChange}
             style={{
               width: '50%',
               position: 'relative',

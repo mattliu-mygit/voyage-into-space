@@ -11,6 +11,7 @@ const MissionLog = (props) => {
           borderRadius: '12px',
           padding: '1rem',
           height: '100%',
+          overflowX: 'hidden',
         }}
       >
         Day 1: Flight to Mars

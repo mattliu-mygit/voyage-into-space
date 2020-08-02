@@ -3,6 +3,7 @@ import nightStars from '../../nightstars.jpg';
 import helmetBottom from '../../helmet-bottom.png';
 import Progress from './Progress';
 import MissionLog from './MissionLog';
+import Poppup from './Poppup';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -16,10 +17,14 @@ import * as flightChanceActions from '../../redux/actions/flightChanceActions';
 import * as testFlightActions from '../../redux/actions/testflightActions';
 import * as missionLogActions from '../../redux/actions/missionLogActions';
 import initialState from '../../redux/reducers/initialState';
+import spaceEarth from '../../spaceEarth.jpg';
+import marsSurface from '../../marsSurface.jpg';
+import mars from '../../mars.jpg';
+import kitty from '../../kitty.jpg';
 
 const Phase2 = (props) => {
   const [width, setWidth] = useState(0);
-  const [helmetHeight, setHelmetHeight] = useState(-20);
+  const [helmetHeight, setHelmetHeight] = useState(-50);
   const [visor, setVisor] = useState(0);
   const [visorHeight, setVisorHeight] = useState(0);
   const [showAuth, setShowAuth] = useState(0);
@@ -33,7 +38,7 @@ const Phase2 = (props) => {
         setWidth(width + 1);
       }, 10);
     }
-    if (helmetHeight < 77.5 && width >= 100) {
+    if (helmetHeight < 76 && width >= 100) {
       setTimeout(() => {
         setHelmetHeight(helmetHeight + 0.25);
       }, 10);
@@ -63,21 +68,88 @@ const Phase2 = (props) => {
         reset();
         props.actions.setMissionLog([
           ...props.missionLog,
-          'Day 1: Rocket exploded while landing. More test flights will find dangerous issues and raise chances of a successful flight!',
+          'Day 1: Rocket exploded while launching. More test flights will find dangerous issues and raise chances of a successful flight!',
         ]);
         setDeath(true);
       }
+      props.actions.setMissionLog([
+        ...props.missionLog,
+        `Day 1: Let's look back at the Earth! We also just passed the moon!`,
+      ]);
       setTimeout(() => {
         setTimer(timer + 1);
       }, 15000);
     }
     if (timer > 1 && timer < 200 && showAuth === 3) {
       setTimeout(() => {
+        const rollDie = Math.random();
+        if (rollDie < 0.01) {
+          if (props.oxygen < 0.5 * props.settlers) {
+            props.actions.setMissionLog([
+              ...props.missionLog,
+              `Day ${timer}: Untracked gravel-sized space rocks hit the rocket. Rocket is mostly undamaged and repairs were smooth, but some oxygen is lost and there isn't enough left to survive the voyage. Bring more oxygen next time!`,
+            ]);
+            reset();
+            setDeath(true);
+          } else {
+            props.actions.setOxygen(props.oxygen - 3);
+            props.actions.setMissionLog([
+              ...props.missionLog,
+              `Day ${timer}: Untracked gravel-sized space rocks hit the rocket. Rocket is mostly undamaged and repairs were smooth, but some 3 tonnes of oxygen were lost. Luckily, you brought extra oxygen, and we were able to continue on the mission!`,
+            ]);
+          }
+        }
+        if (rollDie < 0.01) {
+          if (props.rocketFuel < 250) {
+            props.actions.setMissionLog([
+              ...props.missionLog,
+              `Day ${timer}: Untracked gravel-sized space rocks hit the rocket. Rocket is mostly undamaged and repairs were smooth, but some fuel is lost and there isn't enough left to survive the voyage. Bring more fuel next time!`,
+            ]);
+            reset();
+            setDeath(true);
+          } else {
+            props.actions.setRocketFuel(props.rocketFuel - 3);
+            props.actions.setMissionLog([
+              ...props.missionLog,
+              `Day ${timer}: Untracked gravel-sized space rocks hit the rocket. Rocket is mostly undamaged and repairs were smooth, but some 3 tonnes of fuel was lost. Luckily, you brought extra fuel, and we were able to continue on the mission!`,
+            ]);
+          }
+        }
         setTimer(timer + 1);
       }, 1000);
     }
     if (timer === 200) {
-      setTimeout(() => {}, 1000);
+      setTimeout(() => {
+        props.actions.setMissionLog([
+          ...props.missionLog,
+          `Day ${timer}: We reached Mars! Landing procedures initiated. Ready colonize this planet!`,
+        ]);
+      }, 1000);
+    }
+
+    if (timer === 50) {
+      setTimeout(() => {
+        props.actions.setMissionLog([
+          ...props.missionLog,
+          `Day ${timer}: Here's a picture Mars rovers have took of the surface.`,
+        ]);
+      }, 1000);
+    }
+    if (timer === 100) {
+      setTimeout(() => {
+        props.actions.setMissionLog([
+          ...props.missionLog,
+          `Day ${timer}: We're Halfway there! Here's a picture of a cat!`,
+        ]);
+      }, 1000);
+    }
+    if (timer === 150) {
+      setTimeout(() => {
+        props.actions.setMissionLog([
+          ...props.missionLog,
+          `Day ${timer}: We're almost there! Landing procedures initiated. Take a look at our target!!`,
+        ]);
+      }, 1000);
     }
   }, [width, helmetHeight, visorHeight, timer, showAuth]);
 
@@ -105,6 +177,7 @@ const Phase2 = (props) => {
           height: '97%',
           width: `${width}%`,
           color: 'red',
+          marginBottom: '0rem',
         }}
       ></div>
 
@@ -133,23 +206,34 @@ const Phase2 = (props) => {
               <>
                 <p>Congratulations! Your've blasted off!</p>
                 <p>Currently we are en-route to Low Earth Orbit (LEO)</p>
-                <p>Once we've cleared LEO, we will notify you further.</p>
+                <p>Clearing LEO Now!!!</p>
                 <p>Have a safe flight.</p>
               </>
             ) : showAuth === 3 ? (
               <>
                 <Progress timer={timer} />
                 {timer === 1 ? (
-                  <p style={{ marginTop: '1rem' }}>
-                    Hello! Day 1 is today! We're blasting off right now!
-                  </p>
+                  <>
+                    <p style={{ marginTop: '1rem' }}>
+                      Hello! Day 1 is today! We're blasting off right now!
+                    </p>
+                    <p>
+                      You have a mission log that will document all your notable
+                      events below.
+                    </p>
+                    <p>
+                      {' '}
+                      Look at the poppup at the bottom right of your helmet HUD
+                      to take a look at a picture of the Earth we took!
+                    </p>
+                  </>
                 ) : null}
                 <div
                   style={{
                     display: 'inline-block',
                     top: '20vw',
                     position: 'absolute',
-                    width: '50%',
+                    width: '30%',
                     height: '25%',
                   }}
                 >
@@ -173,7 +257,7 @@ const Phase2 = (props) => {
           width: `100%`,
           marginBottom: '0rem',
           color: 'white',
-          padding: '4rem',
+          padding: '5rem',
           fontSize: '2vw',
           textAlign: 'center',
           opacity: '1',
@@ -181,6 +265,23 @@ const Phase2 = (props) => {
       >
         (っ◔◡◔)っ ♥ Voyage Inc. ♥
       </div>
+      {timer >= 1 && timer < 50 && showAuth > 2 ? (
+        <div style={{ position: 'absolute', top: '75%', left: '75%' }}>
+          <Poppup title="Look back at Earth!" content={spaceEarth} />
+        </div>
+      ) : timer >= 50 && timer < 100 ? (
+        <div style={{ position: 'absolute', top: '75%', left: '75%' }}>
+          <Poppup title="The surface of Mars!" content={marsSurface} />
+        </div>
+      ) : timer >= 100 && timer < 150 ? (
+        <div style={{ position: 'absolute', top: '75%', left: '75%' }}>
+          <Poppup title="Cute Cats!" content={kitty} />
+        </div>
+      ) : timer >= 150 && timer < 200 ? (
+        <div style={{ position: 'absolute', top: '75%', left: '75%' }}>
+          <Poppup title="Our Target!" content={mars} />
+        </div>
+      ) : null}
       {death ? <Redirect to="/oof" /> : null}
 
       {success ? <Redirect to="/congrats" /> : null}

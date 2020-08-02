@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import initialState from '../redux/reducers/initialState';
 
 const Score = (props) => {
+  useEffect(() => {
+    props.setScore(
+      (props.cost - initialState.cost) * 100 +
+        (props.rocketFuel - props.rocketFuel) * 10 +
+        props.settlers * 1000 +
+        props.settlers * 500
+    );
+  }, []);
   return (
     <>
       <table className="table">
@@ -17,12 +25,22 @@ const Score = (props) => {
           <tr>
             <th>Total Cost</th>
             <th>${props.cost}</th>
-            <th>{props.cost - initialState.cost}</th>
+            <th>{(props.cost - initialState.cost) * 100}</th>
           </tr>
           <tr>
             <th>Total Fuel Used</th>
             <th>{props.rocketFuel} tonnes</th>
-            <th>{props.rocketFuel - props.rocketFuel}</th>
+            <th>{(props.rocketFuel - props.rocketFuel) * 10}</th>
+          </tr>
+          <tr>
+            <th>Settlers</th>
+            <th>{props.settlers}</th>
+            <th>{props.settlers * 1000}</th>
+          </tr>
+          <tr>
+            <th>Scientific Equipment</th>
+            <th>{props.settlers}</th>
+            <th>{props.settlers * 500}</th>
           </tr>
         </tbody>
       </table>

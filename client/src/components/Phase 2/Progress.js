@@ -4,11 +4,11 @@ import mars from '../../mars.png';
 import ship from '../../rocket.gif';
 
 const Progress = (props) => {
-  const [rocketHeight, setRocketHeight] = useState(28.25);
+  const [rocketHeight, setRocketHeight] = useState(82);
   useEffect(() => {
     if (props.timer <= 200) {
       setTimeout(() => {
-        setRocketHeight(rocketHeight - 0.15);
+        setRocketHeight(rocketHeight - 0.4225);
       }, 1000);
     }
   }, [props.timer]);
@@ -42,7 +42,7 @@ const Progress = (props) => {
             width: '90%',
             opacity: '1',
             position: 'relative',
-            top: `${rocketHeight}vw`,
+            top: `${rocketHeight}%`,
           }}
         />
 
@@ -53,12 +53,12 @@ const Progress = (props) => {
             width: '100%',
             opacity: '0.5',
             position: 'relative',
-            top: '27.5vw',
+            top: '80%',
           }}
         />
       </div>
       <div>Day: {props.timer}</div>
-      <div>Distance traveled: {1.14 * props.timer} million km</div>
+      <div>Distance traveled: {Math.round(1.14 * props.timer)} million km</div>
     </>
   );
 };
