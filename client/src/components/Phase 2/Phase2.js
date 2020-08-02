@@ -83,7 +83,7 @@ const Phase2 = (props) => {
     if (timer > 1 && timer < 200 && showAuth === 3) {
       setTimeout(() => {
         const rollDie = Math.random();
-        if (rollDie < 0.025) {
+        if (rollDie < 0.02) {
           if (props.oxygen < 0.5 * props.settlers) {
             reset();
             props.actions.setMissionLog([
@@ -99,7 +99,7 @@ const Phase2 = (props) => {
             ]);
           }
         }
-        if (rollDie < 0.025) {
+        if (rollDie > 0.98) {
           if (props.rocketFuel < 250) {
             props.actions.setMissionLog([
               ...props.missionLog,
