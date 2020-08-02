@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getData } from '../api/scoresApi';
 
 const Leaderboard = (props) => {
+  const [scores, setScores] = useState([]);
+  useEffect(() => {
+    getData().then((data) => {
+      setScores(data);
+    });
+  }, []);
   return (
     <>
       <div
@@ -30,7 +37,14 @@ const Leaderboard = (props) => {
               <th>Score</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            {scores.map((entry) => (
+              <tr>
+                <th>{entry.name}</th>
+                <th>{entry.score}</th>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
       ;

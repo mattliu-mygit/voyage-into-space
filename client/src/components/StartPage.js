@@ -6,7 +6,7 @@ function StartPage() {
   const [blastOff, setBlastOff] = useState(false);
   const [disappear, setDisappear] = useState(false);
   const [redirect, setRedirect] = useState(false);
-
+  //UseEffect reset on load
   useEffect(() => {
     if (fontSize < 10 && !disappear) {
       setTimeout(() => {

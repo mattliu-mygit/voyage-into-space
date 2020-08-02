@@ -5,13 +5,28 @@ import { bindActionCreators } from 'redux';
 import * as missionLogActions from '../redux/actions/missionLogActions';
 import MissionLog from './Phase 2/MissionLog';
 import Score from './Score';
+import { setData } from '../api/scoresApi';
 
 const Congrats = (props) => {
   const [playAgain, setPlayAgain] = useState(false);
+  const [score, setScore] = useState(0);
+  const [name, setName] = useState('');
+  const [input, setInput] = useState('');
+  const [redirect, setRedirect] = useState(false);
+
   const handlePlayAgain = () => {
     props.actions.setMissionLog([]);
     setPlayAgain(true);
   };
+
+  const handleSubmit = () => {
+    console.log('input', input);
+    setName(input);
+    let entry = { name: name, score: 1 };
+    setData(entry);
+    setRedirect(true);
+  };
+
   return (
     <>
       <div
@@ -36,7 +51,7 @@ const Congrats = (props) => {
         </h1>
         <h2>You made it to Mars!</h2>
         <h2>Check out your score below!</h2>
-        <Score />
+        <Score setScore={setScore} />
         <div
           style={{
             width: '50%',
@@ -49,12 +64,32 @@ const Congrats = (props) => {
         >
           <MissionLog />
         </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            className="form-control searchbar"
+            type="text"
+            value={input}
+            placeholder="Enter your name here!"
+            onChange={(event) => {
+              setInput(event.target.value);
+            }}
+            style={{
+              width: '50%',
+              position: 'relative',
+              left: '19%',
+              textAlign: 'left',
+              marginLeft: '5vw',
+              marginBottom: '1vw',
+            }}
+          />
+          <input type="submit" value="Submit" />
+        </form>
         <button className="btn btn-primary" onClick={handlePlayAgain}>
           Play Again
         </button>
         {playAgain ? <Redirect to="/" /> : null}
       </div>
-      ;
+      ;{redirect ? <Redirect to="/leaderboard" /> : null}
     </>
   );
 };
