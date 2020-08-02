@@ -313,7 +313,8 @@ const Liftoff = (props) => {
         </>
       ) : screen === 4 ? (
         <>
-          <div>Epic! We're ready to blast off!</div>
+          <p>Epic! </p>
+          <p>We're ready to blast off!</p>
         </>
       ) : null}
     </>
